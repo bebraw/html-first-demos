@@ -1,0 +1,24 @@
+/* https://css-tricks.com/css-only-carousel/ */
+.swiper {
+  text-align: center;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.swiper-slide {
+  scroll-snap-align: start;
+}
+
+/* Don't need button navigation */
+@supports (scroll-snap-type) {
+  .iZvnim {
+    display: none;
+  }
+}
