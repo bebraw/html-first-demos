@@ -55,4 +55,4 @@ Since the original site relied on CSS generated through JavaScript, I opted for 
 })();
 ```
 
-I copied the resulting string, fixed a single base64 string related issue (invalid syntax), and added the file to my modified project.
+I copied the resulting string, fixed two base64 string related issues (invalid syntax), and added the file to my modified project. The current script seems to capture duplicate rules so likely this has to be revisited and optimized further.
