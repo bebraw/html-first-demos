@@ -8,45 +8,48 @@ Since the original site relied on CSS generated through JavaScript, I opted for 
 
 ```javascript
 (async () => {
+  const seen = new Set();
   let cssText = "";
 
-  // Helper: format CSS rules with indentation
+  // Helper: format CSS rules
   function formatRule(ruleText) {
     return ruleText
-      .replace(/\s*{\s*/g, " {\n  ")   // open brace on new line + indent
-      .replace(/;\s*/g, ";\n  ")       // each property on new line + indent
-      .replace(/\s*}\s*/g, "\n}\n\n"); // closing brace on new line
+      .replace(/\s*{\s*/g, " {\n  ")
+      .replace(/;\s*/g, ";\n  ")
+      .replace(/\s*}\s*/g, "\n}\n\n");
   }
 
-  // 1. External + embedded stylesheets
-  const sheets = [...document.styleSheets];
-  for (const sheet of sheets) {
+  // 1. Stylesheets (external + inline <style>)
+  for (const sheet of [...document.styleSheets]) {
     try {
       for (const rule of sheet.cssRules) {
-        cssText += formatRule(rule.cssText);
+        if (!seen.has(rule.cssText)) {
+          seen.add(rule.cssText);
+          cssText += formatRule(rule.cssText);
+        }
       }
     } catch (e) {
       console.warn("Skipped stylesheet due to CORS:", sheet.href);
     }
   }
 
-  // 2. Inline <style> tags
-  document.querySelectorAll("style").forEach(tag => {
-    cssText += "\n/* Inline <style> */\n";
-    cssText += formatRule(tag.innerHTML);
-  });
-
-  // 3. Inline style attributes
+  // 2. Inline style attributes
   document.querySelectorAll("[style]").forEach(el => {
     const selector =
       el.tagName.toLowerCase() +
       (el.id ? "#" + el.id : "") +
       (el.className ? "." + [...el.classList].join(".") : "");
-    cssText += `\n/* Inline style on ${selector} */\n`;
-    cssText += `${selector} {\n  ${el.getAttribute("style").replace(/;\s*/g, ";\n  ")}\n}\n\n`;
+    const inlineRule = `${selector} {\n  ${el
+      .getAttribute("style")
+      .replace(/;\s*/g, ";\n  ")}\n}\n\n`;
+
+    if (!seen.has(inlineRule)) {
+      seen.add(inlineRule);
+      cssText += inlineRule;
+    }
   });
 
-  // 4. Trigger download
+  // 3. Trigger download
   const blob = new Blob([cssText], { type: "text/css" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
@@ -55,4 +58,4 @@ Since the original site relied on CSS generated through JavaScript, I opted for 
 })();
 ```
 
-I copied the resulting string, fixed two base64 string related issues (invalid syntax), and added the file to my modified project. The current script seems to capture duplicate rules so likely this has to be revisited and optimized further.
+I copied the resulting string, fixed two base64 string related issues (invalid syntax), and added the file to my modified project.
