@@ -7,27 +7,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
     "aside .CarouselNavigation__Button-sc-925e5105-1.iZvnim"
   );
 
-  const lastVisibleSlide = getLastVisibleSlide(swiperWrapper, swiperSlides);
-  console.log("last visible slide", lastVisibleSlide);
-
   if (swipeLeft) {
-    // TODO: Implement this part
     swipeLeft.addEventListener("click", () => {
-      if (swiperWrapper) {
-        console.log("Width on swipe left:", swiperWrapper.offsetWidth);
-      } else {
-        console.log("swiper-wrapper not found");
-      }
+      swiperWrapper.scroll({
+        behavior: "smooth",
+        left: Math.max(0, swiperWrapper.scrollLeft - swiperWrapper.offsetWidth),
+      });
     });
   }
 
   if (swipeRight) {
     swipeRight.addEventListener("click", () => {
-      const lastVisibleSlide = getLastVisibleSlide(swiperWrapper, swiperSlides);
-
       swiperWrapper.scroll({
         behavior: "smooth",
-        left: lastVisibleSlide.offsetLeft,
+        left: getLastVisibleSlide(swiperWrapper, swiperSlides).offsetLeft,
       });
     });
   }
