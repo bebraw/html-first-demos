@@ -1,0 +1,19 @@
+{
+  "name": "yle-html-first",
+  "version": "1.0.0",
+  "description": "Yle site but HTML First",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "",
+  "scripts": {
+    "start:modified": "serve ./modified",
+    "start:original": "serve ./original",
+    "lh:modified": "lighthouse http://localhost:3000 --output-path ./reports/modified",
+    "lh:original": "lighthouse http://localhost:3000 --output-path ./reports/original"
+  },
+  "dependencies": {
+    "lighthouse": "12.8.2",
+    "serve": "14.2.5"
+  }
+}

@@ -4,6 +4,10 @@ This repository illustrates how to use HTML First principles to simplify a web p
 
 ## CSS
 
-Since the original site relied on CSS generated through JavaScript, I opted for extracting CSS myself using a small script created with ChatGPT. The code itself is available at `style-extractor.js`.
+Since the original site relied on CSS generated through JavaScript, I opted for extracting CSS myself using a small script created with ChatGPT. The code itself is available at `scripts/style-extractor.js`.
 
 After running the script, I copied the resulting string, fixed two base64 string related issues with invalid syntax, and added the file to my modified project while dropping earlier references from HTML and using the new file instead.
+
+## Lighthouse
+
+To run Lighthouse performance tests, execute `npm run start:<variant>` and `npm run lh:<variant>` in separate terminals. Available variants are `original` and `modified`.
