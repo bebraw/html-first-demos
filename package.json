@@ -9,8 +9,9 @@
   "scripts": {
     "start:modified": "serve ./modified",
     "start:original": "serve ./original",
-    "lh:modified": "lighthouse http://localhost:3000 --output-path ./reports/modified",
-    "lh:original": "lighthouse http://localhost:3000 --output-path ./reports/original"
+    "start:reports": "serve ./reports",
+    "lh:modified": "lighthouse http://localhost:3000 --output-path ./reports/modified.html",
+    "lh:original": "lighthouse http://localhost:3000 --output-path ./reports/original.html"
   },
   "dependencies": {
     "lighthouse": "12.8.2",

@@ -10,4 +10,4 @@ After running the script, I copied the resulting string, fixed two base64 string
 
 ## Lighthouse
 
-To run Lighthouse performance tests, execute `npm run start:<variant>` and `npm run lh:<variant>` in separate terminals. Available variants are `original` and `modified`.
+To run Lighthouse performance tests, execute `npm run start:<variant>` and `npm run lh:<variant>` in separate terminals. Available variants are `original` and `modified`. To see the reports in the browser, execute `npm run start:reports` and you can access `/original` and `/modified` paths to see Lighthouse reports.
