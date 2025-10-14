@@ -10,9 +10,11 @@ To run Lighthouse performance tests, execute `npm run start:<site>:<variant>` an
 
 There are two cases: landing page of Aalto University and Yle. For Aalto, the original page to modify was copied from https://aalto.fi/ (Google Chrome -> "Save As...") 14.10.2025. For Yle, the original page to modify was copied from https://yle.fi/ using the same method 03.09.2025.
 
-### Aalto
+### Aalto University
 
-TODO
+I have covered the modifications done for Aalto University site below:
+
+1. TODO
 
 #### Caveats
 
