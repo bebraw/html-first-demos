@@ -8,11 +8,17 @@ To run Lighthouse performance tests, execute `npm run start:<site>:<variant>` an
 
 ## Cases
 
-There are two cases: landing page of Aalto University and Yle. For Aalto, the original page to modify was copied from https://aalto.fi/ (Chrome -> "Save As...") 14.10.2025. For Yle, the original page to modify was copied from https://yle.fi/ (Chrome -> "Save As...") 03.09.2025.
+There are two cases: landing page of Aalto University and Yle. For Aalto, the original page to modify was copied from https://aalto.fi/ (Google Chrome -> "Save As...") 14.10.2025. For Yle, the original page to modify was copied from https://yle.fi/ using the same method 03.09.2025.
 
 ### Aalto
 
 TODO
+
+#### Caveats
+
+There are several caveats to consider:
+
+1. To enable rendering images, I dropped `<source>` elements from the original page since Google Chrome doesn't store the associated images correctly (may be a bug or a known restrictions) meaning now the images use the default image fallback that was downloaded by Google
 
 ### Yle
 
