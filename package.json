@@ -7,8 +7,10 @@
   "type": "commonjs",
   "main": "",
   "scripts": {
-    "start:modified": "serve ./modified",
-    "start:original": "serve ./original",
+    "start:aalto:modified": "serve ./sites/aalto/modified",
+    "start:aalto:original": "serve ./sites/aalto/original",
+    "start:yle:modified": "serve ./sites/yle/modified",
+    "start:yle:original": "serve ./sites/yle/original",
     "start:reports": "serve ./reports",
     "lh:modified": "lighthouse http://localhost:3000 --output-path ./reports/modified.html",
     "lh:original": "lighthouse http://localhost:3000 --output-path ./reports/original.html"
