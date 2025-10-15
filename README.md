@@ -8,7 +8,7 @@ To run Lighthouse performance tests, execute `npm run start:<site>:<variant>` an
 
 ## Cases
 
-There are two cases: landing page of Aalto University and Yle. For Aalto, the original page to modify was copied from https://aalto.fi/ (Google Chrome -> "Save As...") 14.10.2025. For Yle, the original page to modify was copied from https://yle.fi/ using the same method 03.09.2025.
+There are two cases: landing page of Aalto University and Yle. For Aalto, the original page to modify was copied from https://aalto.fi/ (Google Chrome (Incognito mode) -> "Save As...") 15.10.2025. For Yle, the original page to modify was copied from https://yle.fi/ using the same method 15.10.2025.
 
 ### Aalto University
 
@@ -30,7 +30,7 @@ I have covered the process for Yle site below including CSS approach and known c
 
 Since the original site relied on CSS generated through JavaScript, I opted for extracting CSS myself using a small script created with ChatGPT. The code itself is available at `scripts/style-extractor.js`.
 
-After running the script, I copied the resulting string, fixed two base64 string related issues with invalid syntax, and added the file to my modified project while dropping earlier references from HTML and using the new file instead.
+After running the script in browser inspector, I copied the resulting string, fixed two base64 string related issues with invalid syntax, and added the file to my modified project while dropping earlier references from HTML and using the new file instead.
 
 #### Caveats
 
