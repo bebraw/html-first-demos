@@ -1,3 +1,0 @@
-window.Adform.Tracking.TrackingPointId = 103017866;
-window.Adform.Tracking.TrackingPointName = "aalto.fi/en";
-Adform.Tracking.CreateIframeElement("https://track.adform.net/serving/container/?pm=2496890&lid=103017866&ctype=0&media=0&PageName=aalto.fi%2fen&rnd=1572740005&cpref=https%3a%2f%2fwww.aalto.fi%2ffi&loc=https%3a%2f%2fwww.aalto.fi%2fen");

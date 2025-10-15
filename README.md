@@ -4,23 +4,11 @@ This repository illustrates how to use HTML First principles to simplify a web p
 
 ## Lighthouse
 
-To run Lighthouse performance tests, execute `npm run start:<site>:<variant>` and `npm run lh:<site>:<variant>` in separate terminals. Available sites are `aalto` and `yle` while variants are `original` and `modified`. To see the reports in the browser, execute `npm run start:reports` and you can access `/original` and `/modified` paths to see Lighthouse reports.
+To run Lighthouse performance tests, execute `npm run start:<site>:<variant>` and `npm run lh:<site>:<variant>` in separate terminals. Only `yle` is available as a site for now while variants include `original` and `modified`. To see the reports in the browser, execute `npm run start:reports` and you can access `/original` and `/modified` paths to see Lighthouse reports.
 
 ## Cases
 
 There are two cases: landing page of Aalto University and Yle. For Aalto, the original page to modify was copied from https://aalto.fi/ (Google Chrome (Incognito mode) -> "Save As...") 15.10.2025. For Yle, the original page to modify was copied from https://yle.fi/ using the same method 15.10.2025.
-
-### Aalto University
-
-I have covered the modifications done for Aalto University site below:
-
-1. TODO
-
-#### Caveats
-
-There are several caveats to consider:
-
-1. To enable rendering images, I dropped `<source>` elements from the original page since Google Chrome doesn't store the associated images correctly (may be a bug or a known restrictions) meaning now the images use the default image fallback that was downloaded by Google
 
 ### Yle
 
