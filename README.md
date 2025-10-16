@@ -6,21 +6,17 @@ This repository illustrates how to use HTML First principles to simplify a web p
 
 To run Lighthouse performance tests, execute `npm run start:<site>:<variant>` and `npm run lh:<site>:<variant>` in separate terminals. Only `yle` is available as a site for now while variants include `original` and `modified`. To see the reports in the browser, execute `npm run start:reports` and you can access `/original` and `/modified` paths to see Lighthouse reports.
 
-## Cases
+## Case Yle
 
-There are two cases: landing page of Aalto University and Yle. For Aalto, the original page to modify was copied from https://aalto.fi/ (Google Chrome (Incognito mode) -> "Save As...") 15.10.2025. For Yle, the original page to modify was copied from https://yle.fi/ using the same method 15.10.2025.
+The original page to modify was copied from https://yle.fi/ (Google Chrome (Incognito mode) -> "Save As...") 15.10.2025.
 
-### Yle
-
-I have covered the process for Yle site below including CSS approach and known caveats.
-
-#### CSS
+## CSS
 
 Since the original site relied on CSS generated through JavaScript, I opted for extracting CSS myself using a small script created with ChatGPT. The code itself is available at `scripts/style-extractor.js`.
 
 After running the script in browser inspector, I copied the resulting string, fixed two base64 string related issues with invalid syntax, and added the file to my modified project while dropping earlier references from HTML and using the new file instead.
 
-#### Caveats
+## Caveats
 
 There are several caveats to consider in the modified implementation:
 
