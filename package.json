@@ -4,9 +4,10 @@
   "description": "Yle site but HTML First",
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "",
   "scripts": {
+    "measure:js": "node ./scripts/measure-multiple.js urls.txt",
     "start:yle:modified": "serve ./sites/yle/modified",
     "start:yle:original": "serve ./sites/yle/original",
     "start:reports": "serve ./reports",
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "lighthouse": "12.8.2",
+    "puppeteer": "24.29.0",
     "serve": "14.2.5"
   }
 }
